@@ -24,10 +24,13 @@ int dump(const char *output) {
         return -1;
     }
     
-    printf("looking for KanziBoot 0x%04x:0x%04x\n", APPLE_VID, KANZI_BOOT_LOADER_PID);
+   // printf("looking for KanziBoot 0x%04x:0x%04x\n", APPLE_VID, KANZI_BOOT_LOADER_PID);
+    printf("looking for KanziBoot 0x%04x:0x%04x\n", APPLE_VID, CHIMP_BOOT_LOADER_PID);
 
+//0x05ac
+    //0x162d
     
-    if (find_device(APPLE_VID, KANZI_BOOT_LOADER_PID, &device, &name) != 0) {
+    if (find_device(APPLE_VID, CHIMP_BOOT_LOADER_PID, &device, &name) != 0) {
         printf("failed to find KanziBoot\n");
         result = -1;
         goto out;
